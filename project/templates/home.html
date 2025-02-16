@@ -2,323 +2,770 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>event</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Melbourne Events - Home</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="home.css">
     <style>
-        body {
-            margin: 0;
-            color: white;
-            text-align: center;
-            height: 100vh;
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            animation: slideshow 15s infinite linear;
-        }
+.hero {
+    position: relative;
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    background-size: cover;
+    background-position: center;
+    animation: changeBackground 10s infinite linear;
+}
+.hero .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
 
+
+.hero h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+
+.hero .btn {
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+@keyframes changeBackground {
+    0% { background-image: url('../static/img/cover1.jpg'); }
+    33% { background-image: url('../static/img/two.jpg'); }
+    66% { background-image: url('../static/img/cover5.jpg'); }
+    100% { background-image: url('../static/img/cover3.jpeg'); }
+}
+
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    .hero p {
+        font-size: 1.2rem;
+    }
+    .hero .btn {
+        font-size: 1rem;
+        padding: 8px 16px;
+    }
+}
 
         .overlay {
-            background: rgba(0, 0, 0, 0.5);
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-        }
-
-       
-        @keyframes slideshow {
-            0% { background-image: url('../static/img/baloons.jpg'); }
-            33% { background-image: url('../static/img/event\ cover\ photo.webp'); }
-            66% { background-image: url('../static/img/eventscom_cover.jpeg'); }
-            100% { background-image: url('../static/img/slider2.jpg'); }
-        }
-
-        .header-text {
-            position: relative;
-            z-index: 2;
-            padding-top: 150px;
-        }
-
-        .social-icons a {
-            color: white;
-            font-size: 20px;
-            margin: 10px;
-        }
-        .hero-section {
-            background: url('../static/img//5') no-repeat center center/cover;
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            color: white;
-            padding: 50px;
-            position: relative;
-        }
-        .hero-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
             background: rgba(0, 0, 0, 0.6);
-        }
-        .hero-content {
-            position: relative;
-            z-index: 1;
-        }
-        .contact-form {
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-        }
-        .one{
-            align-items: center;
-            position: relative;
-            top: 400px;
-        }
-        .carousel-inner {
+            width: 100%;
+            height: 100%;
             display: flex;
-        }
-        .carousel-item {
-            flex: 0 0 25%;
-        }
-        .card img {
-            height: 250px;
-            object-fit: cover;
-        }
-        .two{
-            background-image: url(../static/img/black);
+            flex-direction: column;
             align-items: center;
+            justify-content: center;
+        }
+        .navbar {
+            background: linear-gradient(90deg, #6a11cb, #2575fc);
+            padding: 15px 0;
+            transition: all 0.3s ease-in-out;
+        }
+    
+        .navbar-brand {
+            font-size: 1.5rem;
+        }
+    
+       
+        .navbar-nav .nav-link {
+            color:black !important;
+            margin: 0 10px;
+            transition: color 0.3s, transform 0.3s;
+            font-weight: 500;
             position: relative;
-            top: 350px;
+        }
+    
+      
+        .navbar-nav .nav-link:hover {
+            color: #ffcc00 !important;
+            text-decoration: none;
+            transform: scale(1.05);
+        }
+    
+       
+        .navbar-nav .nav-link.active {
+            color: #ffcc00 !important;
+            font-weight: bold;
         }
 
-        .three{
-            background-image: url(../static/img/4);
-            position: relative;
-            align-items: center;
-            top: 350px;       
+        .navbar-nav .btn {
+            border-radius: 20px;
+            transition: background 0.3s, color 0.3s;
         }
-        .youtube{
-            position: relative;
-            align-items: center;
-            left: 800px;
-            bottom: 200px;
+    
+        .navbar-nav .btn:hover {
+            background: #ffcc00;
+            color: black !important;
         }
-        h2{
-            position: relative;
-            top: 100px;
-            color: black;
-        }
-    p{
+     .new1{
         position: relative;
-        top: 150px;
-        color: black;
+        top: 50px;
+     }
+     .pic{
+        position: relative;
+        left: 600px;
+     }
+     .client {
+        background: rgb(238,174,202);
+background: linear-gradient(90deg, rgba(238,174,202,1) 0%, rgba(178,212,203,0.21565122631083689) 17%, rgba(188,181,219,1) 33%, rgba(156,186,230,1) 54%, rgba(148,187,233,1) 59%);
+     }
+     .about{
+        position: relative;
+        top: 80px;
+     }
+
+     body {
+        background: white;
     }
+    .contact-form {
+        background: rgb(163,163,161);
+        background: linear-gradient(94deg, rgba(163,163,161,1) 0%, rgba(131,132,127,1) 71%, rgba(8,8,6,1) 96%, rgba(8,8,6,1) 100%);
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .footer {
+        width: 100vw;  
+        height: 400px; 
+        background: linear-gradient(to top, rgba(0, 123, 255, 0.7), rgba(0, 0, 0, 0.7)); 
+        
+        color: white;
+        display: flex;
+        flex-direction: column;
+        justify-content: center; 
+        align-items: center;
+        text-align: center;
+    }
+    
+    
+    
+
+    
+    .footer .social-icons a {
+        margin: 0 10px;
+        color: white;
+        font-size: 24px;
+        transition: 0.3s;
+    }
+    .footer .social-icons a:hover {
+        color: #f1c40f;
+    }
+    .footer .nav-links a {
+        margin: 0 15px;
+        color: white;
+        text-decoration: none;
+        font-size: 16px;
+        transition: 0.3s;
+    }
+    .footer .nav-links a:hover {
+        text-decoration: underline;
+    }
+    .footer .copyright {
+        margin-top: 10px;
+        font-size: 14px;
+    }
+
+
+     
     </style>
 </head>
 <body>
-    <div class="overlay"></div>
-    
 
-    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-light bg-gradient fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="#">
-                <img src="" alt="Logo" height="40"> Melodia Events
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+            <a class="navbar-brand fw-bold text-warning" href="#">𝓜𝓮𝓵𝓫𝓸𝓾𝓻𝓷𝓮</a>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">About Us</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Services</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Gallery</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Contact Us</a></li>
-                    <li class="nav-item"><a class="nav-link login-btn" href="{% url 'login' %}">Login</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">𝓱𝓸𝓶𝓮  </a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">𝓐𝓫𝓸𝓾𝓽</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#services">𝓢𝓮𝓻𝓿𝓲𝓬𝓮𝓼</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">𝓒𝓸𝓷𝓽𝓪𝓬𝓽</a></li>
+                    <li class="nav-item"><a class="nav-link btn btn-outline-light px-3" href="{% url 'login' %}">𝓛𝓸𝓰𝓲𝓷</a></li>
                 </ul>
             </div>
         </div>
     </nav>
+
+
+    <header class="hero">
+        <div class="overlay">
+            <h1 class="display-4">𝙲̷𝚛̷𝚎̷𝚊̷𝚝̷𝚒̷𝚗̷𝚐̷ 𝙼̷𝚎̷𝚖̷𝚘̷𝚛̷𝚊̷𝚋̷𝚕̷𝚎̷ 𝙴̷𝚟̷𝚎̷𝚗̷𝚝̷𝚜̷</h1>
+            <p class="lead">𝖜𝖊𝖑𝖈𝖔𝖒𝖊 𝖙𝖔 𝖒𝖊𝖑𝖇𝖔𝖚𝖗𝖓𝖊</p>
+        </div>
+    </header>
+
+    <section id="about" class="container my-5">
+        <div class="row align-items-center">
+            <div class="col-md-6">
+                <img src="../static/img/about.jpg" class="img-fluid rounded shadow" alt="About Us">
+            </div>
+            <div class="col-md-6">
+                <h2>ₐbₒᵤₜ ᵤₛ</h2>
+                <p>We specialize in planning and executing unforgettable events. From weddings to corporate events, we make sure every detail is perfect.</p>
+                <a href="#contact" class="btn btn-outline-primary">Learn More</a>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="services" class="bg-light py-5">
+        <div class="container text-center">
+            <h2>𝓞𝓾𝓻 𝓜𝓪𝓻𝓻𝓲𝓪𝓰𝓮 𝓢𝓮𝓻𝓿𝓲𝓬𝓮𝓼</h2>
+            <div class="row mt-4 justify-content-center">
+    
+        
+                <div class="col-md-4 mb-4">
+                    <div class="card service-box p-3 shadow">
+                        <img src="../static/img/three.jpg" class="card-img-top" alt="Wedding Planning" style="height: 250px; object-fit: cover;">
+                        <div class="card-body">
+                            <h5 class="card-title">Wedding Planning</h5>
+                            <p class="card-text">We create the perfect wedding experience tailored to your dreams.</p>
+                        </div>
+                    </div>
+                </div>
+    
+            
+                <div class="col-md-4 mb-4">
+                    <div class="card service-box p-3 shadow">
+                        <img src="../static/img/one.jpg" class="card-img-top" alt="Corporate Events" style="height: 250px; object-fit: cover;">
+                        <div class="card-body">
+                            <h5 class="card-title">Corporate Events</h5>
+                            <p class="card-text">Professional event planning for businesses and organizations.</p>
+                        </div>
+                    </div>
+                </div>
+    
+                
+                <div class="col-md-4 mb-4">
+                    <div class="card service-box p-3 shadow">
+                        <img src="../static/img/two.jpg" class="card-img-top" alt="Private Parties" style="height: 250px; object-fit: cover;">
+                        <div class="card-body">
+                            <h5 class="card-title">Private Parties</h5>
+                            <p class="card-text">Make your birthday or celebration unforgettable with our expertise.</p>
+                        </div>
+                    </div>
+                </div>
+    
+            
+                <div class="col-md-4 mb-4">
+                    <div class="card service-box p-3 shadow">
+                        <img src="../static/img/four.jpg" class="card-img-top" alt="Private Parties" style="height: 250px; object-fit: cover;">
+                        <div class="card-body">
+                            <h5 class="card-title">Event Coordination</h5>
+                            <p class="card-text">Seamless execution for all types of events with professional coordination.</p>
+                        </div>
+                    </div>
+                </div>
+    
+            
+                <div class="col-md-4 mb-4">
+                    <div class="card service-box p-3 shadow">
+                        <img src="../static/img/five.webp" class="card-img-top" alt="Event Decoration" style="height: 250px; object-fit: cover;">
+                        <div class="card-body">
+                            <h5 class="card-title">Event Decoration</h5>
+                            <p class="card-text">Transforming spaces with stunning decor for any occasion.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 mb-4">
+                    <div class="card service-box p-3 shadow">
+                        <img src="../static/img/six.jpg" class="card-img-top" alt="Event Decoration" style="height: 250px; object-fit: cover;">
+                        <div class="card-body">
+                            <h5 class="card-title">Event Decoration</h5>
+                            <p class="card-text">Transforming spaces with stunning decor for any occasion.</p>
+                        </div>
+                    </div>
+                </div>
+    
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+    <section id="services" class="bg-light py-5">
+        <div class="container text-center">
+            <h2>𝓞𝓾𝓻 𝓼𝓽𝓪𝓰𝓮 𝔀𝓸𝓻𝓴</h2>
+            <div class="row mt-4 justify-content-center">
+    
+        
+                <div class="col-md-4 mb-4">
+                    <div class="card service-box p-3 shadow">
+                        <img src="../static/img/stage6.jpg" class="card-img-top" alt="Wedding Planning" style="height: 250px; object-fit: cover;">
+                        <div class="card-body">
+                            <h5 class="card-title">Wedding Planning</h5>
+                            <p class="card-text">We create the perfect wedding experience tailored to your dreams.</p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-md-4 mb-4">
+                    <div class="card service-box p-3 shadow">
+                        <img src="../static/img/stage5.jpg" class="card-img-top" alt="Wedding Planning" style="height: 250px; object-fit: cover;">
+                        <div class="card-body">
+                            <h5 class="card-title">Wedding Planning</h5>
+                            <p class="card-text">We create the perfect wedding experience tailored to your dreams.</p>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="col-md-4 mb-4">
+                    <div class="card service-box p-3 shadow">
+                        <img src="../static/img/stage4.jpg" class="card-img-top" alt="Wedding Planning" style="height: 250px; object-fit: cover;">
+                        <div class="card-body">
+                            <h5 class="card-title">Wedding Planning</h5>
+                            <p class="card-text">We create the perfect wedding experience tailored to your dreams.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 mb-4">
+                    <div class="card service-box p-3 shadow">
+                        <img src="../static/img/stage3.webp" class="card-img-top" alt="Wedding Planning" style="height: 250px; object-fit: cover;">
+                        <div class="card-body">
+                            <h5 class="card-title">Wedding Planning</h5>
+                            <p class="card-text">We create the perfect wedding experience tailored to your dreams.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 mb-4">
+                    <div class="card service-box p-3 shadow">
+                        <img src="../static/img/stage2.jpg" class="card-img-top" alt="Wedding Planning" style="height: 250px; object-fit: cover;">
+                        <div class="card-body">
+                            <h5 class="card-title">Wedding Planning</h5>
+                            <p class="card-text">We create the perfect wedding experience tailored to your dreams.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 mb-4">
+                    <div class="card service-box p-3 shadow">
+                        <img src="../static/img/stage1.jpg" class="card-img-top" alt="Wedding Planning" style="height: 250px; object-fit: cover;">
+                        <div class="card-body">
+                            <h5 class="card-title">Wedding Planning</h5>
+                            <p class="card-text">We create the perfect wedding experience tailored to your dreams.</p>
+                        </div>
+                    </div>
+                </div>
+
+    
+            
+                <section id="services" class="bg-light py-5">
+                    <div class="container text-center">
+                        <h2>𝓫𝓲𝓻𝓽𝓱𝓭𝓪𝔂 𝓯𝓾𝓷𝓬𝓽𝓲𝓸𝓷</h2>
+                        <div class="row mt-4 justify-content-center">
+                
+                    
+                            <div class="col-md-4 mb-4">
+                                <div class="card service-box p-3 shadow">
+                                    <img src="../static/img/day1.jpeg" class="card-img-top" alt="Wedding Planning" style="height: 250px; object-fit: cover;">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Wedding Planning</h5>
+                                        <p class="card-text">We create the perfect wedding experience tailored to your dreams.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="col-md-4 mb-4">
+                                <div class="card service-box p-3 shadow">
+                                    <img src="../static/img/day2.jpg" class="card-img-top" alt="Wedding Planning" style="height: 250px; object-fit: cover;">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Wedding Planning</h5>
+                                        <p class="card-text">We create the perfect wedding experience tailored to your dreams.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4 mb-4">
+                                <div class="card service-box p-3 shadow">
+                                    <img src="../static/img/day3.jpeg" class="card-img-top" alt="Wedding Planning" style="height: 250px; object-fit: cover;">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Wedding Planning</h5>
+                                        <p class="card-text">We create the perfect wedding experience tailored to your dreams.</p>
+                                    </div>
+                                </div>
+                            </div>
     
 
-    <div class="container header-text">
-        <h6 class="text-uppercase">Take a trip into paradise</h6>
-        <h1 class="fw-bold">Partner with Melodia Event Management in Kerala</h1>
-        <p>Kerala's #1 Exclusive Event Company</p>
-        <div class="social-icons">
-            <a href="#"><i class="fab fa-instagram"></i></a>
-            <a href="#"><i class="fab fa-youtube"></i></a>
-            <a href="#"><i class="fab fa-facebook"></i></a>
-            <a href="#"><i class="fab fa-linkedin"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
-        </div>
-        <a href="#" class="btn btn-lg btn-light mt-3">Contact Us</a>
-    </div>
+                            <div class="col-md-4 mb-4">
+                                <div class="card service-box p-3 shadow">
+                                    <img src="../static/img/day4.jpg" class="card-img-top" alt="Wedding Planning" style="height: 250px; object-fit: cover;">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Wedding Planning</h5>
+                                        <p class="card-text">We create the perfect wedding experience tailored to your dreams.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="col-md-4 mb-4">
+                                <div class="card service-box p-3 shadow">
+                                    <img src="../static/img/day5.jpg" class="card-img-top" alt="Wedding Planning" style="height: 250px; object-fit: cover;">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Wedding Planning</h5>
+                                        <p class="card-text">We create the perfect wedding experience tailored to your dreams.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="col-md-4 mb-4">
+                                <div class="card service-box p-3 shadow">
+                                    <img src="../static/img/day6.jpg" class="card-img-top" alt="Wedding Planning" style="height: 250px; object-fit: cover;">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Wedding Planning</h5>
+                                        <p class="card-text">We create the perfect wedding experience tailored to your dreams.</p>
+                                    </div>
+                                </div>
+                            </div>
+    
 
 
 
-
-
-<div class="one">
-    <section class="hero-section">
-        <div class="hero-overlay"></div>
-        <div class="container hero-content">
-            <div class="row align-items-center">
-                <div class="col-md-6">
-                    <h6>MELODIA - KERALA'S VERY OWN EVENT COMPANY</h6>
-                    <h1>Looking for the Most Creative & Innovative Event Planners in Kerala?</h1>
-                    <p>Imagine celebrating the most special events of your life without worrying about a single thing...</p>
-                    <p>Contact us today to bring your vision to life and create unforgettable memories!</p>
+                            
+    <section id="services" class="bg-light py-5">
+        <div class="container text-center">
+            <h2>𝓣𝓮𝓶𝓹𝓵𝓮 𝔀𝓸𝓻𝓴</h2>
+            <div class="row mt-4 justify-content-center">
+    
+        
+                <div class="col-md-4 mb-4">
+                    <div class="card service-box p-3 shadow">
+                        <img src="../static/img/temple1.webp" class="card-img-top" alt="Wedding Planning" style="height: 250px; object-fit: cover;">
+                        <div class="card-body">
+                            <h5 class="card-title">Wedding Planning</h5>
+                            <p class="card-text">We create the perfect wedding experience tailored to your dreams.</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-md-6">
-                    <div class="contact-form">
-                        <h4>Get in Touch</h4>
-                        <form>
-                            <div class="mb-3">
-                                <input type="text" class="form-control" placeholder="Enter your Full Name">
-                            </div>
-                            <div class="mb-3">
-                                <input type="text" class="form-control" placeholder="Enter your Phone Number">
-                            </div>
-                            <div class="mb-3">
-                                <input type="email" class="form-control" placeholder="Enter your Email ID">
-                            </div>
-                            <div class="mb-3">
-                                <textarea class="form-control" rows="3" placeholder="Message"></textarea>
-                            </div>
-                            <button type="submit" class="btn btn-primary w-100">SUBMIT</button>
-                        </form>
+
+
+                <div class="col-md-4 mb-4">
+                    <div class="card service-box p-3 shadow">
+                        <img src="../static/img/temple2.jpg" class="card-img-top" alt="Wedding Planning" style="height: 250px; object-fit: cover;">
+                        <div class="card-body">
+                            <h5 class="card-title">Wedding Planning</h5>
+                            <p class="card-text">We create the perfect wedding experience tailored to your dreams.</p>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="col-md-4 mb-4">
+                    <div class="card service-box p-3 shadow">
+                        <img src="../static/img/temple3.jpg" class="card-img-top" alt="Wedding Planning" style="height: 250px; object-fit: cover;">
+                        <div class="card-body">
+                            <h5 class="card-title">Wedding Planning</h5>
+                            <p class="card-text">We create the perfect wedding experience tailored to your dreams.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 mb-4">
+                    <div class="card service-box p-3 shadow">
+                        <img src="../static/img/temple4.jpg" class="card-img-top" alt="Wedding Planning" style="height: 250px; object-fit: cover;">
+                        <div class="card-body">
+                            <h5 class="card-title">Wedding Planning</h5>
+                            <p class="card-text">We create the perfect wedding experience tailored to your dreams.</p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-md-4 mb-4">
+                    <div class="card service-box p-3 shadow">
+                        <img src="../static/img/temple5.jpg" class="card-img-top" alt="Wedding Planning" style="height: 250px; object-fit: cover;">
+                        <div class="card-body">
+                            <h5 class="card-title">Wedding Planning</h5>
+                            <p class="card-text">We create the perfect wedding experience tailored to your dreams.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 mb-4">
+                    <div class="card service-box p-3 shadow">
+                        <img src="../static/img/temple6.jpg" class="card-img-top" alt="Wedding Planning" style="height: 250px; object-fit: cover;">
+                        <div class="card-body">
+                            <h5 class="card-title">Wedding Planning</h5>
+                            <p class="card-text">We create the perfect wedding experience tailored to your dreams.</p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-md-4 mb-4">
+                    <div class="card service-box p-3 shadow">
+                        <img src="../static/img/temple7.webp" class="card-img-top" alt="Wedding Planning" style="height: 250px; object-fit: cover;">
+                        <div class="card-body">
+                            <h5 class="card-title">Wedding Planning</h5>
+                            <p class="card-text">We create the perfect wedding experience tailored to your dreams.</p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-md-4 mb-4">
+                    <div class="card service-box p-3 shadow">
+                        <img src="../static/img/temple8.jpg" class="card-img-top" alt="Wedding Planning" style="height: 250px; object-fit: cover;">
+                        <div class="card-body">
+                            <h5 class="card-title">Wedding Planning</h5>
+                            <p class="card-text">We create the perfect wedding experience tailored to your dreams.</p>
+                        </div>
+                    </div>
+                </div>
+
+
+                                         
+    <section id="services" class="bg-light py-5">
+        <div class="container text-center">
+            <h2></h2>
+            <div class="row mt-4 justify-content-center">
+    
+        
+                <div class="col-md-4 mb-4">
+                    <div class="card service-box p-3 shadow">
+                        <img src="../static/img/grand1.jpg" class="card-img-top" alt="Wedding Planning" style="height: 250px; object-fit: cover;">
+                        <div class="card-body">𝓸𝓾𝓻 𝓰𝓻𝓪𝓷𝓭 𝓯𝓾𝓷𝓬𝓽𝓲𝓸𝓷𝓼
+                            <h5 class="card-title">Wedding Planning</h5>
+                            <p class="card-text">We create the perfect wedding experience tailored to your dreams.</p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-md-4 mb-4">
+                    <div class="card service-box p-3 shadow">
+                        <img src="../static/img/grand2.jpg" class="card-img-top" alt="Wedding Planning" style="height: 250px; object-fit: cover;">
+                        <div class="card-body">
+                            <h5 class="card-title">Wedding Planning</h5>
+                            <p class="card-text">We create the perfect wedding experience tailored to your dreams.</p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-md-4 mb-4">
+                    <div class="card service-box p-3 shadow">
+                        <img src="../static/img/grand3.jpg" class="card-img-top" alt="Wedding Planning" style="height: 250px; object-fit: cover;">
+                        <div class="card-body">
+                            <h5 class="card-title">Wedding Planning</h5>
+                            <p class="card-text">We create the perfect wedding experience tailored to your dreams.</p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-md-4 mb-4">
+                    <div class="card service-box p-3 shadow">
+                        <img src="../static/img/day4.jpg" class="card-img-top" alt="Wedding Planning" style="height: 250px; object-fit: cover;">
+                        <div class="card-body">
+                            <h5 class="card-title">Wedding Planning</h5>
+                            <p class="card-text">We create the perfect wedding experience tailored to your dreams.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 mb-4">
+                    <div class="card service-box p-3 shadow">
+                        <img src="../static/img/grand5.jpg" class="card-img-top" alt="Wedding Planning" style="height: 250px; object-fit: cover;">
+                        <div class="card-body">
+                            <h5 class="card-title">Wedding Planning</h5>
+                            <p class="card-text">We create the perfect wedding experience tailored to your dreams.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 mb-4">
+                    <div class="card service-box p-3 shadow">
+                        <img src="../static/img/grand6.jpg" class="card-img-top" alt="Wedding Planning" style="height: 250px; object-fit: cover;">
+                        <div class="card-body">
+                            <h5 class="card-title">Wedding Planning</h5>
+                            <p class="card-text">We create the perfect wedding experience tailored to your dreams.</p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-md-4 mb-4">
+                    <div class="card service-box p-3 shadow">
+                        <img src="../static/img/grand4.webp" class="card-img-top" alt="Wedding Planning" style="height: 250px; object-fit: cover;">
+                        <div class="card-body">
+                            <h5 class="card-title">Wedding Planning</h5>
+                            <p class="card-text">We create the perfect wedding experience tailored to your dreams.</p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-md-4 mb-4">
+                    <div class="card service-box p-3 shadow">
+                        <img src="../static/img/grand7.jpg" class="card-img-top" alt="Wedding Planning" style="height: 250px; object-fit: cover;">
+                        <div class="card-body">
+                            <h5 class="card-title">Wedding Planning</h5>
+                            <p class="card-text">We create the perfect wedding experience tailored to your dreams.</p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-md-4 mb-4">
+                    <div class="card service-box p-3 shadow">
+                        <img src="../static/img/grand8.jpg" class="card-img-top" alt="Wedding Planning" style="height: 250px; object-fit: cover;">
+                        <div class="card-body">
+                            <h5 class="card-title">Wedding Planning</h5>
+                            <p class="card-text">We create the perfect wedding experience tailored to your dreams.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 mb-4">
+                    <div class="card service-box p-3 shadow">
+                        <img src="../static/img/grand9.jpg" class="card-img-top" alt="Wedding Planning" style="height: 250px; object-fit: cover;">
+                        <div class="card-body">
+                            <h5 class="card-title">Wedding Planning</h5>
+                            <p class="card-text">We create the perfect wedding experience tailored to your dreams.</p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-md-4 mb-4">
+                    <div class="card service-box p-3 shadow">
+                        <img src="../static/img/grand10.webp" class="card-img-top" alt="Wedding Planning" style="height: 250px; object-fit: cover;">
+                        <div class="card-body">
+                            <h5 class="card-title">Wedding Planning</h5>
+                            <p class="card-text">We create the perfect wedding experience tailored to your dreams.</p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-md-4 mb-4">
+                    <div class="card service-box p-3 shadow">
+                        <img src="../static/img/grand11.jpg" class="card-img-top" alt="Wedding Planning" style="height: 250px; object-fit: cover;">
+                        <div class="card-body">
+                            <h5 class="card-title">Wedding Planning</h5>
+                            <p class="card-text">We create the perfect wedding experience tailored to your dreams.</p>
+                        </div>
+                    </div>
+                </div>
+<div class="client">
+    <section class="container my-5">
+        <h2 class="text-center">ᴡʜᴀᴛ ᴏᴜʀ ᴄʟɪᴇɴᴛꜱ ꜱᴀʏ</h2>
+        <div id="testimonialCarousel" class="carousel slide mt-4" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="text-center">
+                        <p class="lead">"The team made our wedding absolutely perfect. Highly recommended!"</p>
+                        <h5>- sreehari & shivapriya</h5>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="text-center">
+                        <p class="lead">"Our corporate event was a success, thanks to their seamless planning."</p>
+                        <h5>-vishanu </h5>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="text-center">
+                        <p class="lead">"I had the best birthday party ever! Thank you so much!"</p>
+                        <h5>- Akshay & Sona</h5>
                     </div>
                 </div>
             </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </button>
         </div>
     </section></div>
 
-
-<div class="two">
-<div class="container mt-5">
-    <div id="eventCarousel" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <div class="card">
-                    <img src="../static/img/8" class="card-img-top" alt="Wedding Decor">
-                    <div class="card-body text-center">
-                        <h5 class="card-title">Wedding Decor</h5>
-                    </div>
-                </div>
-            </div>
-            <div class="carousel-item">
-                <div class="card">
-                    <img src="../static/img/OIP.jpg.crdownload" class="card-img-top" alt="Wedding Management">
-                    <div class="card-body text-center">
-                        <h5 class="card-title">Wedding Management</h5>
-                    </div>
-                </div>
-            </div>
-            <div class="carousel-item">
-                <div class="card">
-                    <img src="../static/img/image2(79).jpeg" class="card-img-top" alt="Conference Management">
-                    <div class="card-body text-center">
-                        <h5 class="card-title">Conference Management</h5>
-                    </div>
-                </div>
-            </div>
-            <div class="carousel-item">
-                <div class="card">
-                    <img src="../static/img/1" class="card-img-top" alt="Product Launch">
-                    <div class="card-body text-center">
-                        <h5 class="card-title">Product Launch</h5>
-                    </div>
-                </div>
-            </div>
-            <div class="carousel-item">
-                <div class="card">
-                    <img src="../static/img/2" class="card-img-top" alt="Product Launch">
-                    <div class="card-body text-center">
-                        <h5 class="card-title">Product Launch</h5>
-                    </div>
-                </div>
-            </div>
-            <div class="carousel-item">
-                <div class="card">
-                    <img src="../static/img/3" class="card-img-top" alt="Product Launch">
-                    <div class="card-body text-center">
-                        <h5 class="card-title">Product Launch</h5>
-                    </div>
-                </div>
-            </div>
-            <div class="carousel-item">
-                <div class="card">
-                    <img src="../static/img/4" class="card-img-top" alt="Product Launch">
-                    <div class="card-body text-center">
-                        <h5 class="card-title">Product Launch</h5>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="card">
-                        <img src="../static/img/5" class="card-img-top" alt="Product Launch">
-                        <div class="card-body text-center">
-                            <h5 class="card-title">Product Launch</h5>
+    <div class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="contact-form">
+                    <h2 class="text-center mb-4">ℭ𝔬𝔫𝔱𝔞𝔠𝔱 𝔘𝔰</h2>
+                    <form>
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Full Name</label>
+                            <input type="text" class="form-control" id="name" placeholder="Enter your name">
                         </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="card">
-                        <img src="../static/img/6" class="card-img-top" alt="Product Launch">
-                        <div class="card-body text-center">
-                            <h5 class="card-title">Product Launch</h5>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email address</label>
+                            <input type="email" class="form-control" id="email" placeholder="Enter your email">
                         </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="card">
-                        <img src="../static/img/7" class="card-img-top" alt="Product Launch">
-                        <div class="card-body text-center">
-                            <h5 class="card-title">Product Launch</h5>
+                        <div class="mb-3">
+                            <label for="message" class="form-label">Message</label>
+                            <textarea class="form-control" id="message" rows="4" placeholder="Type your message here..."></textarea>
                         </div>
-                    </div>
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-primary px-4">Send Message</button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#eventCarousel" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon"></span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#eventCarousel" data-bs-slide="next">
-            <span class="carousel-control-next-icon"></span>
-        </button>
     </div>
-</div></div>
 
-<div class="three">
-<div class="container mt-8">
-    <div class="row align-items-center">
-        <div class="col-md-6">
-            <h2>ISO 9001:2015 CERTIFIED EVENT MANAGEMENT COMPANY IN KERALA</h2>
-            <p>Have you ever dreamed of planning the perfect event that will be remembered forever? Look no further than Melodia® Events, the top-notch event management company in Kerala, India, that has everything you need to make your occasion an unforgettable experience.</p>
-            <p>We make everything from corporate event planning and personal celebrations to even small customized event packages absolutely memorable! Contact us today to learn more about our services and how we can help you organize the top event management in Kerala.</p>
-        </div>
-        <div class="youtube">
-            <div class="col-md-6">
-                <div class="ratio ratio-16x9">
-                    <iframe 
-                        src="https://www.youtube.com/embed/E78OGeB8QUE" 
-                        title="YouTube video" 
-                        allowfullscreen>
-                    </iframe>
-                </div>
-            </div>
-        </div>
-        
-</div>
-</div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+
+   
+    <footer class="footer">
+        <h2>𝓜𝓮𝓵𝓫𝓸𝓾𝓻𝓷𝓮 𝕖𝕧𝕖𝕟𝕥𝕤</h2>
+        <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+        <div class="nav-links mt-3">
+            <a href="#">𝓱𝓸𝓶𝓮 </a>
+            <a href="#">𝓐𝓫𝓸𝓾𝓽</a>
+            <a href="#">𝓢𝓮𝓻𝓿𝓲𝓬𝓮𝓼</a>
+            <a href="#">𝓣𝓮𝓪𝓶</a>
+            <a href="#">𝓒𝓸𝓷𝓽𝓪𝓬𝓽</a>
+        </div>
+        <p class="copyright mt-3">© 2025 𝓨𝓸𝓾𝓻 𝓦𝓮𝓫𝓼𝓲𝓽𝓮 | 𝓐𝓵𝓵 𝓡𝓲𝓰𝓱𝓽𝓼 𝓡𝓮𝓼𝓮𝓻𝓿𝓮𝓭.</p>
+    </footer>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
+
