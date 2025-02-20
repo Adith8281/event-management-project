@@ -1,0 +1,50 @@
+body {
+    font-family: Arial, sans-serif;
+    background-image: url("../img/bk");
+    text-align: center;
+}
+.container {
+    max-width: 1000px;
+    margin: 20px auto;
+    padding: 20px;
+}
+    h1 {
+        color: black;
+        font-size: 50px; 
+    }
+.team {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.member {
+    background: rgb(39,2,18);
+    background: linear-gradient(90deg, rgb(16, 0, 7) 0%, rgba(9,18,16,0.21565122631083689) 17%, rgba(20,8,74,1) 33%, rgba(16,65,138,1) 54%, rgba(90,26,50,1) 59%);
+    padding: 30px; 
+    margin: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 280px; 
+    text-align: center;
+}
+
+.member img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 3px solid #666;
+}
+.name {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 10px 0;
+}
+.title {
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+.info {
+    font-size: 12px;
+    color: #555;
+}

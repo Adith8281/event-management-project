@@ -1,83 +1,98 @@
-* {
+/* General Reset */
+body {
+    font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #667eea, #764ba2);
 }
 
-body {
-    background-image: url(../img/4);
+/* Wrapper for Centering */
+.login-wrapper {
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+    width: 100%;
     height: 100vh;
 }
+
+/* Glassmorphism Login Container */
 .login-container {
-    background: #ffffff; 
-    position: relative;
-    width: 350px; 
-    height: auto;  
-    padding: 30px; 
-    border-radius: 10px;
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2); 
+    background: rgba(255, 255, 255, 0.1);
+    padding: 40px;
+    border-radius: 12px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     text-align: center;
+    width: 350px;
 }
 
-
-@media (max-width: 420px) {
-    .login-container {
-        width: 90%; 
-        padding: 20px;
-    }
-}
-
-
-
+/* Heading */
 h2 {
-    margin-bottom: 15px;
-    font-size: 22px;
+    color: white;
+    margin-bottom: 20px;
+    font-size: 28px;
     font-weight: 600;
 }
-form {
+
+/* Form Fields */
+form p {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    text-align: left;
+    margin-bottom: 15px;
 }
 
-
-input:focus {
-    border-color: #007bff;
+input {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
     outline: none;
 }
 
+/* Placeholder Styling */
+input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* Button Styling */
 button {
-    background: #007bff;
+    width: 100%;
+    padding: 12px;
+    background: #ff4b5c;
     color: white;
-    font-size: 16px;
-    padding: 10px;
     border: none;
-    border-radius: 5px;
+    border-radius: 8px;
     cursor: pointer;
+    font-size: 18px;
+    transition: all 0.3s ease;
+    margin-top: 10px;
 }
 
 button:hover {
-    background: #0056b3;
+    background: #e33e50;
 }
 
+/* Register Link */
 p {
-    margin-top: 10px;
+    margin-top: 15px;
     font-size: 14px;
+    color: white;
 }
 
-p a {
-    color: #007bff;
+a {
+    color: #ff4b5c;
     text-decoration: none;
-    font-weight: bold;
+    font-weight: 500;
 }
 
-p a:hover {
+a:hover {
     text-decoration: underline;
 }
-
-
-
