@@ -1,14 +1,23 @@
 body {
     font-family: Arial, sans-serif;
-    background-image: url("../img/bk");
-    text-align: center;
+    background-image: url("../img/team.webp");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; 
+    height: 100vh; 
+    margin: 0;
+    padding: 0;
 }
+
 .container {
     max-width: 1000px;
     margin: 20px auto;
     padding: 20px;
 }
     h1 {
+        position: relative;
+        left: 190px;
         color: black;
         font-size: 50px; 
     }
@@ -23,7 +32,7 @@ body {
     padding: 30px; 
     margin: 10px;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 8px #00000033;
     width: 280px; 
     text-align: center;
 }

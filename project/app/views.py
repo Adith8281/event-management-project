@@ -81,3 +81,6 @@ def about(request):
 
 def team(request):
     return render(request,'team.html')
+
+def service(request):
+    return render(request,'service.html')
